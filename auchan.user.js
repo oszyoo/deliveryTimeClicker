@@ -14,36 +14,27 @@
 
 (function() {
     'use strict';
-    // Your code here...
 
     function checkDay() {
 
     setTimeout(function () {
 
         jQuery('div#deliveryAppointmentModal').on('shown.bs.modal', function () {
-            console.log('1');
+            console.log('most jelent meg a modal');
         });
 
         jQuery('a.basket__summary-appointment-range-text').trigger('click');
 
-
-
         setTimeout(function () {
-           console.log(jQuery('div.day.last-visible > div.day__inner > div.day__number').text());
            var cd = jQuery('div.day.last-visible > div.day__inner > div.day__lowest-price').text();
             if ((cd.trim() !== '-' )) {
                 console.log('new day');
 
             } else {
-                console.log('no');
-              // close modal
                 jQuery('div.time-table ~ div.button-container > button.btn-link.pull-right').trigger('click');
                 checkDay();
 
-
-
             }
-
 
         }, 4000);
 
